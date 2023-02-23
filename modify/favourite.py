@@ -12,7 +12,7 @@ base_url = os.getenv("BASE_URL")
 url = base_url + 'stories/favourite'
 headers = {'Content-Type': 'application/json'}
 body = {
-    'storyId': '1'
+    'storyId': '6'
 }
 
 response = requests.post(url, json=body, headers=headers, cookies=login_response.cookies)
