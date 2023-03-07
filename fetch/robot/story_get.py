@@ -2,11 +2,13 @@ import requests
 import os
 import json
 from dotenv import load_dotenv
+import time
 
 load_dotenv()
 
+start_time = time.perf_counter()
 base_url = os.getenv("BASE_URL")
-url = base_url + "stories/robot/3"
+url = base_url + "stories/robot/2"
 headers = {"x-auth-token": "33"}
 response = requests.get(url, headers=headers)
 print(response.status_code)
@@ -58,4 +60,7 @@ else:
     json_file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "story_json.json")
     with open(json_file_path, "w") as outfile:
         json.dump(story_json, outfile)
+
+    end_time = time.perf_counter()
+    print(f"The code ran in {end_time - start_time:0.4f} seconds")
     

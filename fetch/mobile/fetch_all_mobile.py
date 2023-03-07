@@ -10,6 +10,7 @@ headers = {'Content-type': 'application/json'}
 
 response = requests.get(url, headers=headers)
 data = response.json()
+print('data', data)
 
 for i, story in enumerate(data):
     print("Title:",  story["title"])

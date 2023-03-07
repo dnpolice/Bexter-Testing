@@ -1,0 +1,11 @@
+post/create/storyphotos/
+post/create/coverphoto/
+post/create/voicerecording/
+
+fetch/robot/storyphotos/
+fetch/robot/coverphoto/
+fetch/robot/voicerecording/
+
+fetch/robot python fetch/storyphotos/
+fetch/robot python fetch/coverphoto/
+fetch/robot python fetch/voicerecording/

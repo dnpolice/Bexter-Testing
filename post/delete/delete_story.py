@@ -6,7 +6,7 @@ load_dotenv()
 base_url = os.getenv("BASE_URL")
 url = base_url + "stories/delete"
 body = {
-    "storyId": "5"
+    "storyId": "13"
 }
 headers = {'Content-type': 'application/json'}
 response = requests.post(url, json=body, headers=headers)
