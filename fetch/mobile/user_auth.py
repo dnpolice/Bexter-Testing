@@ -33,6 +33,7 @@ def signin():
   response = requests.post(url, json=body, headers=headers)
 
   print('signin status: ', response.status_code)
+  print(response.json())
   if response.status_code != 200:
     print(response.json())
   return response
