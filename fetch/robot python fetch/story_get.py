@@ -25,7 +25,7 @@ async def download_voice_recording(session, url, path):
 async def main():
     start_time = time.perf_counter()
     base_url = os.getenv("BASE_URL")
-    url = base_url + "stories/robots/6"
+    url = base_url + "stories/robots/18"
     headers = {"x-auth-token": "33"}
 
     async with aiohttp.ClientSession(headers=headers) as session:

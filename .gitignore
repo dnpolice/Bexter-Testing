@@ -9,3 +9,8 @@ fetch/robot/voicerecording/
 fetch/robot python fetch/storyphotos/
 fetch/robot python fetch/coverphoto/
 fetch/robot python fetch/voicerecording/
+
+
+robot mobile connection/storyphotos/
+robot mobile connection/coverphoto/
+robot mobile connection/voicerecording/

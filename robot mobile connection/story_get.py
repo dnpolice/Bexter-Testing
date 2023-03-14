@@ -14,20 +14,6 @@ sio = socketio.Client()
 base_url = os.getenv("BASE_URL")
 fileName = __file__
 
-
-run = False
-id = -1
-
-@sio.on('play')
-def on_message(data):
-    id = data["storyId"]
-    print(id)
-    asyncio.run(main(id))
-    
-sio.connect(base_url)
-
-sio.emit('join', 33)
-
 async def download_file(session, url, path):
     async with session.get(url) as response:
         content = await response.read()
@@ -102,8 +88,16 @@ async def main(id):
         print(f"The code ran in {end_time - start_time:0.4f} seconds")
 
 
-# while True:
-#     if (run == True):
-#         asyncio.run(main(id))
-#         run = False
-#         time.sleep(1)
+@sio.on('play')
+def on_message(data):
+    print("message");
+    id = data["storyId"]
+    asyncio.run(main(id))
+    
+sio.connect(base_url)
+
+sio.emit('join', 33)
+
+sio.wait()
+
+# asyncio.run(main(18))
