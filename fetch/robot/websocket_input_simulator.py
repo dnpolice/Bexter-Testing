@@ -11,4 +11,9 @@ sio.connect(base_url)
 
 sio.emit('join', 33)
 
-sio.emit('input', {"robotSerialNumber": 33, "command": "stop", "storyId": 17})
+sio.emit('input', {"robotSerialNumber": 33, "command": "play", "storyId": 17})
+
+sio.sleep(8)
+
+sio.emit('input', {"robotSerialNumber": 33, "command": "stop"})
+

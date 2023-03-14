@@ -106,10 +106,15 @@ async def main(id):
         end_time = time.perf_counter()
         print(f"The code ran in {end_time - start_time:0.4f} seconds")    
 
+# Note: sometimes two plays/two stop are recieved but still works as expected
 @sio.on('play')
 def on_message(data):
-    id = data["storyId"]
-    asyncio.run(main(id))
+    if data.get("command") == "play":
+        id = data.get("storyId")
+        asyncio.run(main(id))
+        print("play")
+    else:
+        print("stop")
     
 sio.connect(base_url)
 
