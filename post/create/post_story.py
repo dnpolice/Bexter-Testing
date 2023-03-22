@@ -23,13 +23,13 @@ for file_name in sorted(os.listdir(story_photo_path)):
         fields.append(('storyPhotos', (file_name, open(os.path.join(story_photo_path, file_name), 'rb'), 'image/png')))
 
 # Add Story Photo Times
-storyPhotoTimes = ["1", "2"]
+storyPhotoTimes = ["9", "33", "54", "78", "101", "124", "150", "172", "195", "216"]
 for t in storyPhotoTimes:
     fields.append(('storyPhotoTimes', t))
 
 # Add Key Transcript Of Keywords
-transcriptOfKeywords = ["Dog", "Cat"]
-transcriptOfKeywordTimes = ["1", "2"]
+transcriptOfKeywords = ['like', 'red', 'what', 'red', 'red', 'like', 'like', 'blue', 'blue', 'blue', 'like', 'yellow', 'yellow', 'like', 'pink', 'pink', 'pink', 'like', 'purple', 'purple', 'purple', 'like', 'green', 'green', 'green', 'like', 'green', 'green', 'like', 'black', 'black', 'black', 'like', 'white', 'white', 'white', 'see', 'see', 'pink', 'yellow', 'green', 'purple', 'like']
+transcriptOfKeywordTimes = ['4', '13', '17', '21', '24', '29', '35', '42', '46', '50', '59', '67', '71', '83', '91', '95', '100', '105', '112', '118', '123', '128', '140', '145', '149', '154', '162', '170', '176', '185', '189', '193', '198', '205', '211', '215', '226', '235', '241', '247', '253', '260', '268']
 for i in range(len(transcriptOfKeywords)):
     w = transcriptOfKeywords[i]
     t = transcriptOfKeywordTimes[i]
@@ -37,14 +37,14 @@ for i in range(len(transcriptOfKeywords)):
     fields.append(('transcriptOfKeywordTimes', t))
 
 # Add Key Learning Outcomes
-keyLearningOutcomes = ["Fish", "Share", "Play"]
+keyLearningOutcomes = ['Colours','See','Like','What']
 for w in keyLearningOutcomes:
     fields.append(('keyLearningOutcomes', w))
 
 single_data_fields = [
-    ('title', 'The Tail of Peter Rabbit'),
-    ('author', 'Beatrix Potter'),
-    ('description', 'The Tale of Peter Rabbit is a childrens book written and illustrated by Beatrix Potter that follows mischievous and disobedient young Peter Rabbit as he gets into, and is chased around, the garden of Mr. McGregor.'),
+    ('title', 'I Like My Car'),
+    ('author', 'Michael Robertson'),
+    ('description', 'Funny animals match their equally funny cars as they all make their way to a car party!'),
     ('isVisible', "true"),
     ('coverPhoto', (os.path.basename(cover_photo_path), open(cover_photo_path, 'rb'), 'image/png')),
     ('voiceRecording', (os.path.basename(compressed_voice_path), open(compressed_voice_path, 'rb'), 'audio/mpeg'))
